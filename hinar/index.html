@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هەنار — یارییەکی جیهانی کراوە لە گوندێکی کوردستان</title>
+<meta name="description" content="هەنار: یارییەکی جیهانی کراوەی تابلۆیی. ئاو لە کانی بهێنە، هەنار لێبکەرەوە و یارمەتی خەڵکی گوند بدە.">
+<meta property="og:title" content="هەنار">
+<meta property="og:description" content="یارییەکی جیهانی کراوە لە گوندێکی کوردستان، وەک تابلۆیەکی ڕۆن.">
+<meta property="og:image" content="https://shabang.site/hinar/img/new/horse.jpg">
+<meta name="theme-color" content="#2a1712">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;800;900&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a1712; --ink-2:#5a3d30; --paper:#f4ead8; --paper-2:#eadbc0;
+    --red:#a8251d; --red-2:#c8382b; --gold:#d99a2b; --line:rgba(42,23,18,.14);
+    --store:"https://desktop-fk0agf3.tail5df012.ts.net/";
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--paper);color:var(--ink);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3,.kufi{font-family:"Noto Kufi Arabic","Vazirmatn",sans-serif;line-height:1.35}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+  /* top bar */
+  .bar{position:absolute;inset-inline:0;top:0;z-index:5;padding:18px 0}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-family:"Noto Kufi Arabic";font-weight:800;font-size:1.25rem;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  .brand img{width:38px;height:38px;border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+  .bar nav{display:flex;gap:22px}
+  .bar nav a{color:#fff;text-decoration:none;font-weight:500;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:.92}
+  .bar nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+
+  /* hero */
+  .hero{position:relative;min-height:min(92vh,860px);display:grid;align-items:end;color:#fff;overflow:hidden;background:#3a2016}
+  .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,14,9,.92) 0%,rgba(30,14,9,.55) 35%,rgba(30,14,9,0) 65%),linear-gradient(to bottom,rgba(30,14,9,.45),rgba(30,14,9,0) 22%)}
+  .hero .wrap{position:relative;z-index:2;padding-bottom:clamp(40px,8vh,90px)}
+  .hero .tag{display:inline-block;font-size:.9rem;font-weight:700;letter-spacing:.02em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:4px 14px;border-radius:99px;backdrop-filter:blur(4px)}
+  .hero h1{font-size:clamp(3.6rem,13vw,8rem);font-weight:900;margin-top:10px;letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+  .hero p{font-size:clamp(1.1rem,2.6vw,1.45rem);max-width:34ch;opacity:.95;margin-top:4px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Noto Kufi Arabic";font-weight:800;font-size:1.05rem;text-decoration:none;padding:14px 28px;border-radius:14px;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--red);color:#fff;box-shadow:0 10px 30px -8px rgba(168,37,29,.8)}
+  .btn.primary:hover{background:var(--red-2)}
+  .btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .btn.ghost:hover{background:rgba(255,255,255,.22)}
+
+  /* intro */
+  section{padding:clamp(64px,10vw,120px) 0}
+  .eyebrow{color:var(--red);font-weight:700;font-size:.95rem}
+  h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;margin-top:6px}
+  .lede{font-size:1.15rem;color:var(--ink-2);max-width:60ch;margin-top:14px}
+  .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,80px);align-items:center}
+  .intro figure{position:relative}
+  .intro figure img{border-radius:28px;aspect-ratio:1;object-fit:cover;width:min(100%,420px);margin-inline:auto;box-shadow:0 30px 60px -20px rgba(42,23,18,.45)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line)}
+  .facts div{padding:18px 0 0}
+  .facts b{display:block;font-family:"Noto Kufi Arabic";font-size:1.6rem;font-weight:900;color:var(--red)}
+  .facts span{color:var(--ink-2);font-size:.95rem}
+
+  /* things to do */
+  .do{background:var(--ink);color:var(--paper)}
+  .do .eyebrow{color:var(--gold)}
+  .do .lede{color:#d9c8b0}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .card{background:#3a2219;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+  .card img{aspect-ratio:1;object-fit:cover;width:100%}
+  .card div{padding:16px 18px 20px}
+  .card h3{font-size:1.2rem;font-weight:800;color:#fff}
+  .card p{font-size:.98rem;color:#d9c8b0;margin-top:4px;line-height:1.75}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(120px,16vw,200px);gap:12px;margin-top:40px}
+  .gallery button{all:unset;cursor:zoom-in;border-radius:14px;overflow:hidden;position:relative}
+  .gallery button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gallery button:hover img{transform:scale(1.04)}
+  .gallery .g1{grid-column:span 4;grid-row:span 2}.gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5,.gallery .g6{grid-column:span 2}
+  dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);margin:auto}
+  dialog::backdrop{background:rgba(20,10,6,.88)}
+  dialog img{border-radius:12px;max-height:86vh;width:auto;margin:auto}
+  dialog form{position:fixed;top:16px;left:16px}
+  dialog button{font:inherit;font-size:1.6rem;line-height:1;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;cursor:pointer}
+
+  /* get it */
+  .get{background:var(--paper-2)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;counter-reset:s}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+  .step::before{counter-increment:s;content:counter(s,arabic-indic);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;font-family:"Noto Kufi Arabic";font-weight:800;margin-bottom:12px}
+  .step h3{font-size:1.15rem;font-weight:800}
+  .step p{color:var(--ink-2);margin-top:4px;font-size:1rem}
+  .buybox{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:var(--ink);color:#fff;border-radius:22px;padding:28px clamp(22px,4vw,40px)}
+  .buybox h3{font-size:1.5rem;font-weight:800}
+  .buybox p{color:#d9c8b0;margin-top:2px}
+
+  footer{background:#1e0e09;color:#bba48a;padding:34px 0;font-size:.95rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+  footer a{color:#e8d6bd;text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .intro{grid-template-columns:1fr}
+    .intro figure{order:-1}
+    .intro figure img{width:min(62%,300px)}
+    .grid4{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(120px,30vw,220px)}
+    .gallery .g1{grid-column:span 2;grid-row:span 2}.gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5{grid-column:span 1}.gallery .g6{grid-column:span 2}
+  }
+  @media (max-width:560px){
+    .bar nav{display:none}
+    .grid4{grid-template-columns:1fr}
+    .facts b{font-size:1.3rem}
+    .btn{flex:1 1 100%;justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/logo.jpg" alt="">هەنار</a>
+    <nav aria-label="بەشەکان">
+      <a href="#about">دەربارە</a>
+      <a href="#play">چی دەکەیت</a>
+      <a href="#gallery">وێنەکان</a>
+      <a href="#get">کڕین</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <img src="img/new/horse.jpg" alt="ئاسۆ بە ئەسپەوە لە دەشتێکی سەوزدا، چیای بەفرین لە دوورەوە، وەک تابلۆیەکی ڕۆن" fetchpriority="high">
+    <div class="wrap">
+      <span class="tag">بۆ ئەندرۆید</span>
+      <h1>هەنار</h1>
+      <p>یارییەکی جیهانی کراوە لە گوندێکی کوردستان، کە هەموو شتێکی وەک تابلۆیەکی ڕۆن کێشراوە.</p>
+      <div class="cta">
+        <a class="btn primary store" href="https://desktop-fk0agf3.tail5df012.ts.net/">کڕینی یاری هەنار</a>
+        <a class="btn ghost" href="#gallery">وێنەکان ببینە</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap intro">
+      <div>
+        <div class="eyebrow">دەربارەی یارییەکە</div>
+        <h2>گوندێک کە چاوەڕێتە</h2>
+        <p class="lede">لە هەنار تۆ لە گوندێکی بەردینی چیاکانی کوردستاندا دەژیت. ئاو لە کانی دەهێنیت، لە باخەکان هەنار لێدەکەیتەوە، و یارمەتی خەڵکی گوند دەدەیت. ئەسپ و مانگا و گوێدرێژ، بازاڕ و دارستان و کۆشکی ئاغا، هەموویان چاوەڕێی تۆن.</p>
+        <div class="facts">
+          <div><b>جیهانی کراوە</b><span>بە ئارەزووی خۆت بگەڕێ</span></div>
+          <div><b>تابلۆی ڕۆن</b><span>هەموو شتێک بە فڵچە کێشراوە</span></div>
+          <div><b>یەکجار</b><span>دەیکڕیت و بۆ هەمیشە هی تۆیە</span></div>
+        </div>
+      </div>
+      <figure><img src="img/new/home.jpg" alt="ئاسۆ و بەرخەکەی لە ڕێگای گوند، مزگەوت لە دوورەوە" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="do" id="play">
+    <div class="wrap">
+      <div class="eyebrow">چی دەکەیت</div>
+      <h2>ژیانی ڕۆژانەی گوند</h2>
+      <p class="lede">هیچ پەلەیەک نییە. ڕۆژەکەت بە کارەکانی گوند تێدەپەڕێنیت و جیهانەکە بە ئارامی دەناسیت.</p>
+      <div class="grid4">
+        <article class="card"><img src="img/new/plough.jpg" alt="جووتکردن بە دوو گا لە کێڵگەدا" loading="lazy"><div><h3>جووت و کشتوکاڵ</h3><p>زەوی جووت بکە، تۆو بوەشێنە و گەنمەکەت بدورەوە.</p></div></article>
+        <article class="card"><img src="img/new/water.jpg" alt="ئاسۆ و بەرخەکەی لە دارستانی پاییزدا" loading="lazy"><div><h3>ئاو و دارستان</h3><p>ئاو لە کانی بهێنە و بە دارستانەکاندا بگەڕێ. بەرخەکەت لەگەڵتە.</p></div></article>
+        <article class="card"><img src="img/new/sheep.jpg" alt="شوانکاری: مەڕەکان لە لێژایی گیادا" loading="lazy"><div><h3>شوانکاری</h3><p>مەڕەکان ببە بۆ لەوەڕ و بیانگەڕێنەوە بۆ گوند.</p></div></article>
+        <article class="card"><img src="img/new/horse-lake.jpg" alt="سواری ئەسپ لە کەناری گۆلێک" loading="lazy"><div><h3>سواری ئەسپ</h3><p>ئەسپێک ڕام بکە و بە دەشت و دارستاندا بگەڕێ.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="eyebrow">وێنەکان</div>
+      <h2>ڕاستەوخۆ لە ناو یارییەکەوە</h2>
+      <p class="lede">هەموو ئەم وێنانە لە ناو یارییەکەدا گیراون.</p>
+      <div class="gallery">
+        <button class="g1" aria-label="گەورەکردنی وێنە"><img src="img/new/village.jpg" alt="گوندی بەردینی هەورامان بە ماڵە پلەپلەکانییەوە" loading="lazy"></button>
+        <button class="g2" aria-label="گەورەکردنی وێنە"><img src="img/new/mosque.jpg" alt="مزگەوتی گوند بە گومەزی شینەوە" loading="lazy"></button>
+        <button class="g3" aria-label="گەورەکردنی وێنە"><img src="img/new/waterfall.jpg" alt="تاڤگە لە نێو بەردەکاندا" loading="lazy"></button>
+        <button class="g4" aria-label="گەورەکردنی وێنە"><img src="img/new/night.jpg" alt="گۆلەکە لە شەودا بە چرای فانۆسەوە" loading="lazy"></button>
+        <button class="g5" aria-label="گەورەکردنی وێنە"><img src="img/new/wheat.jpg" alt="کێڵگەی گەنمی زێڕین" loading="lazy"></button>
+        <button class="g6" aria-label="گەورەکردنی وێنە"><img src="img/new/bridge.jpg" alt="پردی سەر ڕووبار و گوند لە دوورەوە" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="get" id="get">
+    <div class="wrap">
+      <div class="eyebrow">چۆن دەیگریت</div>
+      <h2>یەکجار دەیکڕیت، بۆ هەمیشە هی تۆیە</h2>
+      <p class="lede">هیچ کڕینێکی تر لە ناو یارییەکەدا نییە. یارییەکە بە هەژمارەکەتەوە دەبەسترێتەوە.</p>
+      <div class="steps">
+        <div class="step"><h3>بچۆ ژوورەوە</h3><p>لە ماڵپەڕی کڕینەکە بە Google یان ئیمەیڵ بچۆ ژوورەوە.</p></div>
+        <div class="step"><h3>بیکڕە</h3><p>بە Wayl پارە بدە: کارتی بانکی، ZainCash، FIB و زیاتر.</p></div>
+        <div class="step"><h3>یاری بکە</h3><p>ئەپی هەنار دابەزێنە و بە هەمان هەژمار بچۆ ژوورەوە.</p></div>
+      </div>
+      <div class="buybox">
+        <div><h3>ئامادەیت بۆ گوندەکە؟</h3><p>نرخی ئێستا لە ماڵپەڕی کڕینەکەدا دیارە.</p></div>
+        <a class="btn primary store" href="https://desktop-fk0agf3.tail5df012.ts.net/">کڕینی یاری هەنار</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© ٢٠٢٦ هەنار</span>
+    <span><a href="https://desktop-fk0agf3.tail5df012.ts.net/privacy">تایبەتمەندی</a> · <a href="https://desktop-fk0agf3.tail5df012.ts.net/delete-account">سڕینەوەی هەژمار</a></span>
+  </div>
+</footer>
+
+<dialog id="viewer" aria-label="وێنە">
+  <form method="dialog"><button aria-label="داخستن">×</button></form>
+  <img alt="">
+</dialog>
+
+<script>
+  const dlg = document.getElementById('viewer'), big = dlg.querySelector('img');
+  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => {
+    const i = b.querySelector('img'); big.src = i.src; big.alt = i.alt; dlg.showModal();
+  }));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+</script>
+</body>
+</html>
